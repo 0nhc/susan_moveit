@@ -1,0 +1,8 @@
+<launch>
+  <node name="susan_hardware_interface_node" pkg="susan_control" type="susan_hardware_interface_node" output="screen">
+      <param name="loop_frequency" value="100.0"/>
+  </node>
+  <node name="socketcan_node" pkg="socketcan_bridge" type="socketcan_bridge_node" />
+
+  <include file="$(dirname)/susan_controllers.launch"/>
+</launch>
